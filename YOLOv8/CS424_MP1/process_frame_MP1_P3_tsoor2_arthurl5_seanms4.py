@@ -27,5 +27,5 @@ def process_frame(frame):
     cluster_boxes_data = get_bbox_info(frame, box_info)
     
     # student's code here
-
+    
     
