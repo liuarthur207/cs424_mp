@@ -27,5 +27,18 @@ def process_frame(frame):
     cluster_boxes_data = get_bbox_info(frame, box_info)
     
     # student's code here
+    task_list = []
     
-    
+    for bounding in cluster_boxes_data:
+        h = bounding[3] - bounding[1]
+        w = bounding[2] - bounding[0]
+        a = h * w
+        task = TaskEntity(
+            frame.path, 
+            coord=bounding[:4], 
+            priority=a, 
+            depth=bounding[4]
+        ) #pretty much same as problem but priority is dependent on area so smaller ones run first
+        task_list.append(task)
+        
+    return task_list
