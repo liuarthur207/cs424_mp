@@ -27,5 +27,15 @@ def process_frame(frame):
     cluster_boxes_data = get_bbox_info(frame, box_info)
     
     # student's code here
+    task_list = []
     
-    
+    for bounding in cluster_boxes_data:
+        task = TaskEntity(
+            frame.path, 
+            coord=bounding[:4], 
+            priority=int(bounding[4]*1000), 
+            depth=bounding[4]
+        )
+        task_list.append(task)
+        
+    return task_list
