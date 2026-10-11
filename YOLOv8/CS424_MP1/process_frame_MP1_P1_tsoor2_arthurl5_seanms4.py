@@ -27,5 +27,7 @@ def process_frame(frame):
     cluster_boxes_data = get_bbox_info(frame, box_info)
     
     # student's code here
-    
+    task = TaskEntity(frame.path, coord=[0, 0, 1920, 1280])
+    return [task] # Return as list
+
     
