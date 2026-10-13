@@ -50,7 +50,7 @@ def process_frame(frame):
 
             depth_change = abs(bounding[4] - processed_bounding[4])
 
-            if position_change < 50 and depth_change < 5:
+            if position_change < 100 and depth_change < 5:
                 duplicate = True
                 break
 
