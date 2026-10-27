@@ -107,8 +107,8 @@ def merge_cluster_boxes(cluster_boxes_data):
 
             merged_box[0] = max(0, math.floor(merged_box[0] - width * padding))
             merged_box[1] = max(0, math.floor(merged_box[1] - height * padding))
-            merged_box[2] = math.ceil(merged_box[2] + width * padding)
-            merged_box[3] = math.ceil(merged_box[3] + height * padding)
+            merged_box[2] = min(1920, math.ceil(merged_box[2] + width * padding))
+            merged_box[3] = min(1280, math.ceil(merged_box[3] + height * padding))
 
             merged_boxes_data.append(merged_box)
 
