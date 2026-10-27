@@ -11,7 +11,7 @@ start_time = time.time()
 
 print("Simulation started at the real-time: ", getRealTimeInPrintFormat())
 
-iot_object_detection_module = iot_object_detection_module(run_yolo_flag = True)
+iot_object_detection_module = iot_object_detection_module(num_frames=100)
 
 iot_object_detection_module.run()
     
